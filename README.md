@@ -57,13 +57,15 @@ Make sure to start redis before starting OpenVNet services:
 
 Register various OpenVNet resources.
 ```
-# ./vnet-register-network.sh
-# ./vnet-register-router.sh
+# ./vnet-register-all.sh
 ```
 
-* vnet-register-network.sh : Create three virtual networks
+* vnet-register-datapath.sh : Create OpenFlow datapath
+* vnet-register-net1.sh : Create three virtual networks net1
   * net1 : 172.16.1.0/24
+* vnet-register-net2.sh : Create three virtual networks net2
   * net2 : 172.16.2.0/24
+* vnet-register-net3.sh : Create three virtual networks net3
   * net3 : 172.16.1.0/24 (IP address range is overlaped with net1)
 * vnet-register-router.sh
   * Create a router between net1 and net2
