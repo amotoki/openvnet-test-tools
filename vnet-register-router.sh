@@ -42,7 +42,10 @@ http://${webapi_host}:${port}/api/interfaces
 
 # router
 ./vnctl route_link add --uuid=rl-vnetlink1 --mac-address=52:54:00:60:11:11
-./vnctl datapath route_links add dp-$BRNAME rl-vnetlink1 --link-mac-address=08:00:27:20:01:01
+#./vnctl datapath route_links add dp-$BRNAME rl-vnetlink1 --link-mac-address=08:00:27:20:01:01
+curl -s -X POST --data-urlencode route_link_uuid=rl-vnetlink1 \
+  --data-urlencode mac_address=08:00:27:20:01:01 \
+  http://${webapi_host}:${port}/api/datapaths/dp-$BRNAME/route_links/rl-vnetlink1
 
 #./vnctl route add --uuid=r-vnet1 --interface-uuid=if-vnet1gw --route-link-uuid=rl-vnetlink1 --ipv4-address=172.16.1.0 --ipv4-prefix=24
 curl -s -X POST --data-urlencode uuid=r-vnet1 --data-urlencode interface_uuid=if-vnet1gw --data-urlencode route_link_uuid=rl-vnetlink1 --data-urlencode ipv4_network=172.16.1.0 http://${webapi_host}:${port}/api/routes
