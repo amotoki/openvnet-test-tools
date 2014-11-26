@@ -22,7 +22,7 @@ and "yum update" installs a new version of iproute (which supports network names
 ```
 or you can install iproute package explicitly.
 ```
-# yum install yum install http://rdo.fedorapeople.org/rdo-release.rpm
+# yum install http://rdo.fedorapeople.org/rdo-release.rpm
 ```
 
 After the installation, check the appropriate iproute package is installed and it works.
